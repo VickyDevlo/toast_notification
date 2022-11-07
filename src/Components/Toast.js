@@ -1,16 +1,51 @@
-import React from "react";
 import PropTypes from "prop-types";
-import "./Toast.css";
 import { BsCheckCircleFill } from "react-icons/bs";
+import { AiOutlineInfoCircle } from "react-icons/ai";
+import { ImCancelCircle } from "react-icons/im";
+import { AiOutlineWarning } from "react-icons/ai";
+import "./Toast.css";
 
 const Toast = ({ variant, children, Isopen, removeHandler }) => {
   return (
     <>
       {Isopen && (
-        <div className={`toastwrapper top-to-bottom toast-${variant}`}>
-          <div className="Icons">
-            <BsCheckCircleFill />
-          </div>
+        <div className={`toastwrapper toast-${variant}`}>
+          {(() => {
+            switch (variant) {
+              case "success":
+                return (
+                  <>
+                    <BsCheckCircleFill />
+                    this is a successful toast.
+                  </>
+                );
+              case "primary":
+                return (
+                  <>
+                    <AiOutlineInfoCircle />
+                    this is a information toast.
+                  </>
+                );
+              case "info":
+                return (
+                  <>
+                    <AiOutlineWarning />
+                    this is a warning toast.
+                  </>
+                );
+
+              case "danger":
+                return (
+                  <>
+                    <ImCancelCircle />
+                    this is a danger toast.
+                  </>
+                );
+              default:
+                return;
+            }
+          })()}
+
           <div className="content">{children}</div>
 
           <button className="close-btn" onClick={() => removeHandler()}>
@@ -23,12 +58,12 @@ const Toast = ({ variant, children, Isopen, removeHandler }) => {
 };
 
 Toast.defaultProps = {
-  variant: "succsess",
+  variant: "success",
   Isopen: true,
 };
 
 Toast.propTypes = {
-  variant: PropTypes.oneOf(["danger", "succsess", "primary", "info"]),
+  variant: PropTypes.oneOf(["danger", "success", "primary", "info"]),
   children: PropTypes.node,
   removeHandler: PropTypes.func,
   Isopen: PropTypes.bool,

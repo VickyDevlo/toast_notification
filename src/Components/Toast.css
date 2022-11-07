@@ -4,25 +4,27 @@
     position: fixed;
     top: 1%;
     left: 39%;
-    width: 21%;
+    width: 20%;
     border: 1px solid #ececec;
     padding: 10px 12px;
     font-size: 20px;
     border-radius: 8px;
 }
 
+
+
 .close-btn {
     background-color: transparent;
-    border: none;
+    border: 0;
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
 }
 
-/* .close-btn:hover {
+.close-btn:hover {
+    border-radius: 50%;
     background: white;
-    border-radius: 31%; 
-} */
+}
 
 .toast-danger {
     background-color: #f2dede;
@@ -30,7 +32,7 @@
     color: #a94442;
 }
 
-.toast-succsess {
+.toast-success {
     background-color: #dff0d8;
     border-color: #d6e9c6;
     color: #3c763d;
@@ -48,19 +50,23 @@
     color: #31708f;
 }
 
-.top-to-bottom {
-    transition: tranform .6s ease-in-out;
-    animation: toast-in-out-top .6s;
+
+/* .top-bottom {
+    transition: transform .6s ease-in;
+    animation: toast-in-top .7s;
 }
 
+ 
 
+ 
 
-@keyframes toast-in-out-top {
+@keyframes toast-in-top {
     from {
         transform: translateY(-100%);
+
     }
 
     to {
         transform: translateY(0);
     }
-}
+} */

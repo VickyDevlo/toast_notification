@@ -14,12 +14,8 @@ function App() {
   };
 
   return (
-    <div>
-      <div className="App">
-        <Toast Isopen={Isopen} removeHandler={removeHandler}>
-          A Succsessful toast.
-        </Toast>
-      </div>
+    <div className="App">
+      <Toast Isopen={Isopen} variant="success" removeHandler={removeHandler} />
 
       <button className="toastOpenBtn" onClick={toastOpenHandler}>
         ToastBaropen
