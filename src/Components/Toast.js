@@ -26,7 +26,7 @@ const Toast = ({ variant, children, Isopen, removeHandler }) => {
                     this is a information toast.
                   </>
                 );
-              case "info":
+              case "warning":
                 return (
                   <>
                     <AiOutlineWarning />
@@ -38,7 +38,7 @@ const Toast = ({ variant, children, Isopen, removeHandler }) => {
                 return (
                   <>
                     <ImCancelCircle />
-                    this is a danger toast.
+                    this is a error toast.
                   </>
                 );
               default:
@@ -58,12 +58,12 @@ const Toast = ({ variant, children, Isopen, removeHandler }) => {
 };
 
 Toast.defaultProps = {
-  variant: "success",
+  variant: "primary",
   Isopen: true,
 };
 
 Toast.propTypes = {
-  variant: PropTypes.oneOf(["danger", "success", "primary", "info"]),
+  variant: PropTypes.oneOf(["primary", "success", "warning", "danger"]),
   children: PropTypes.node,
   removeHandler: PropTypes.func,
   Isopen: PropTypes.bool,

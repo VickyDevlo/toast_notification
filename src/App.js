@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <Toast Isopen={Isopen} variant="success" removeHandler={removeHandler} />
+      <Toast Isopen={Isopen} removeHandler={removeHandler} />
 
       <button className="toastOpenBtn" onClick={toastOpenHandler}>
         ToastBaropen
